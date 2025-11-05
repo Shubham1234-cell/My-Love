@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #ffe4e1;
+  overflow-x: hidden;
+}
+
+nav {
+  text-align: center;
+  background: #ff758c;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav button {
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav button:hover {
+  background: #ffccd5;
+  transform: scale(1.05);
+}
+
+section {
+  display: none;
+  padding: 50px 20px;
+  min-height: 100vh;
+  text-align: center;
+  animation: fadeIn 1s;
+}
+
+section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ❤️ Heart Shape */
+.heart {
+  position: relative;
+  width: 120px;
+  height: 110px;
+  margin: 100px auto;
+  transform: rotate(-45deg);
+  background: red;
+  animation: beat 1s infinite;
+  cursor: pointer;
+  /* no border-radius here so the bottom forms a crisp point */
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 110px;
+  border-radius: 50%;
+  background: red;
+}
+
+.heart:before {
+  top: -60px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: 60px;
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1) rotate(-45deg); }
+  50% { transform: scale(1.2) rotate(-45deg); }
+}
+
+/* Love Letter (English + Hindi) */
+.letter-container {
+  max-width: 750px;
+  margin: auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  text-align: left;
+  line-height: 2;
+  font-size: 1.2rem;
+}
+
+.letter-container h1 {
+  text-align: center;
+  color: #b71c1c;
+  margin-bottom: 20px;
+}
+
+/* Hindi font */
+#hindi-letter {
+  font-family: 'Noto Serif Devanagari', serif;
+  background: linear-gradient(to right, #fff0f5, #ffe4e1);
+}
+
+/* Shayari */
+#shayari {
+  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  font-family: 'Kokila', serif;
+  color: #3e1f1f;
+}
+
+#shayari p {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  line-height: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+
+#shayari p:nth-child(2) { animation-delay: 0.5s; }
+#shayari p:nth-child(3) { animation-delay: 1s; }
+#shayari p:nth-child(4) { animation-delay: 1.5s; }
+#shayari p:nth-child(5) { animation-delay: 2s; }
+#shayari p:nth-child(6) { animation-delay: 2.5s; }
+#shayari p:nth-child(7) { animation-delay: 3s; }
+#shayari p:nth-child(8) { animation-delay: 3.5s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating hearts for Shayari */
+.floating-heart {
+  position: absolute;
+  bottom: 0;
+  font-size: 20px;
+  color: red;
+  animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-600px); opacity: 0; }
+}
+/* removed email capture styles */
+
+
